@@ -1,6 +1,6 @@
 import { Box, Button } from '@chakra-ui/react'
 import React, { useRef } from 'react'
-import "../Styles/Product.css"
+import styles from "../Styles/Slider.module.css"
 import Mycard from './Mycard'
 
 const ProductSlider = () => {
@@ -19,10 +19,10 @@ const ProductSlider = () => {
     }
   return (
     <Box>
-         <Button className="btnpre" onClick={handleprev} ><p>&lt;</p></Button>
-        <Button className="btnnext" onClick={handlenext} ><p>&gt;</p> </Button> 
+         <Button className={styles.btnpre} onClick={handleprev} ><p>&lt;</p></Button>
+        <Button className= {styles.btnnext} onClick={handlenext} ><p>&gt;</p> </Button> 
         
-        <Box ref={box} className="productcontainer" >
+        <Box ref={box} className={styles.productcontainer} >
             <Mycard cardno="1" />
             <Mycard cardno="2" />
             <Mycard cardno="3" />

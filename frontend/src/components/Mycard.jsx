@@ -1,10 +1,10 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
-import "../Styles/Product.css"
+import styles from "../Styles/Slider.module.css"
 
 const Mycard = ({cardno}) => {
   return (
-    <Box className="mycard" >My card No {cardno}</Box>
+    <Box className={styles.mycard} >My card No {cardno}</Box>
   )
 }
 

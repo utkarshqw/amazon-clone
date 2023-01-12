@@ -32,6 +32,7 @@ const Navbar = () => {
         <InputGroup w="45%">
           <Input
             className={styles.nav_input}
+            borderRadius="2px"
             bg="white"
             placeholder="Serch product..."
           />
@@ -100,6 +101,7 @@ const Navbar = () => {
         {/* Cart icon component  */}
         <CartIcon />
       </Flex>
+      <Box h={"60px"}></Box>
     </>
   );
 };
