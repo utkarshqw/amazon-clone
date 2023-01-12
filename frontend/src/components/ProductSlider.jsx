@@ -4,6 +4,7 @@ import {BsChevronLeft} from "react-icons/bs"
 import {BsChevronRight} from "react-icons/bs"
 import styles from "../Styles/Slider.module.css"
 import Mycard from './Mycard'
+import {sliderdata} from "../data/Data"
 
 const ProductSlider = () => {
 
@@ -26,20 +27,12 @@ const ProductSlider = () => {
         <button   onClick={handlenext} ><BsChevronRight size="35px" /> </button> 
         </Flex>
         <Box ref={box} className={styles.productcontainer} >
-            <Mycard cardno="1" />
-            <Mycard cardno="2" />
-            <Mycard cardno="3" />
-            <Mycard cardno="4" />
-            <Mycard cardno="5" />
-            <Mycard cardno="6" />
-            <Mycard cardno="7" />
-            <Mycard cardno="8" />
-            <Mycard cardno="9" />
-            <Mycard cardno="10" />
-            <Mycard cardno="11" />
-            <Mycard cardno="12" />
-            <Mycard cardno="13" />
-
+          {
+            sliderdata.map((el,i)=> <Mycard src={el.img} /> )
+          }
+            
+           
+            
         </Box>
 
 
