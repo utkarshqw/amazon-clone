@@ -1,5 +1,7 @@
-import { Box, Button } from '@chakra-ui/react'
+import { Box, Button, Flex } from '@chakra-ui/react'
 import React, { useRef } from 'react'
+import {BsChevronLeft} from "react-icons/bs"
+import {BsChevronRight} from "react-icons/bs"
 import styles from "../Styles/Slider.module.css"
 import Mycard from './Mycard'
 
@@ -18,10 +20,11 @@ const ProductSlider = () => {
         box.current.scrollLeft += width
     }
   return (
-    <Box>
-         <Button className={styles.btnpre} onClick={handleprev} ><p>&lt;</p></Button>
-        <Button className= {styles.btnnext} onClick={handlenext} ><p>&gt;</p> </Button> 
-        
+    <Box pos="relative">
+         <Flex className={styles.btn_product} >
+        <button   onClick={handleprev} ><BsChevronLeft  size="35px" /></button>
+        <button   onClick={handlenext} ><BsChevronRight size="35px" /> </button> 
+        </Flex>
         <Box ref={box} className={styles.productcontainer} >
             <Mycard cardno="1" />
             <Mycard cardno="2" />
