@@ -19,12 +19,14 @@ input[type="radio"]:checked:after {
 .slider_container > input {
   position: relative;
   left: 50%;
-  top: 280px;
+  top: 220px;
   margin: 5px;
 }
 #first {
   margin-top: -24px;
 }
+
+
 
 #first > img {
   transition: 2s;
@@ -61,14 +63,15 @@ input[type="radio"]:checked:after {
   min-width: 250px;
    height:250px;
    background-color: white;
-   margin: 10px;
+   /* margin: 10px; */
    color: white;
 
 }
 
 .productcontainer{
    display: flex;
-   margin-top: 10px;
+   /* margin-top: 10px; */
+   gap: 15px;
    overflow: hidden;
    scroll-behavior: smooth;
 }
@@ -101,3 +104,4 @@ align-items: center;
 .btn_product > button:nth-child(2){
   border-radius: 5px 0px 0px 5px;
 }
+

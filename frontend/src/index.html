@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+  
+        .main {
+            display: flex;
+        }
+  
+        .main img {
+            cursor: zoom-in;
+        }
+  
+        .zoom-preview {
+            height: 300px;
+            width: 300px;
+            border: 1px solid #000;
+            margin-left: 20px;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Magnifier</h1>
+    <p>Move your mouse over the image</p>
+    <div class="main">
+        <img src=
+"https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/34/18/5f.jpg" 
+             id="gfg-img"
+            height="300px" width="300px" alt="#" />
+        <div class="zoom-preview"></div>
+    </div>
+    
+</body>
+<script>
+    var img = document.getElementById("gfg-img");
+    var preview = document.querySelector(".zoom-preview");
+
+    //calculating the ratio by which we want to magnify the image
+    //you can increase or decrease it according to your requirement
+    var x = preview.offsetWidth / 100;
+    var y = preview.offsetHeight / 100;
+
+    img.addEventListener("mousemove", (e) => {
+        preview.style.backgroundImage = 
+"url(https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/34/18/5f.jpg)";
+        preview.style.backgroundSize = img.width * x + 
+          "px " + img.height * y + "px";
+        var posX = e.offsetX;
+        var posY = e.offsetY;
+        preview.style.backgroundPosition = "-" + posX * x + 
+          "px -" + posY * y + "px";
+    });
+    img.addEventListener("mouseout", () => {
+        preview.style.backgroundImage = "none";
+    });
+</script>
+</html>
