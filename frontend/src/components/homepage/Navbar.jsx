@@ -14,7 +14,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { BsSearch } from "react-icons/bs";
 import { AiFillCaretDown } from "react-icons/ai";
 import React from "react";
-import styles from "../Styles/Navbar.module.css";
+import styles from "../../Styles/Navbar.module.css";
 import CartIcon from "./CartIcon";
 
 const Navbar = () => {
@@ -58,7 +58,7 @@ const Navbar = () => {
           </Flex>
 
           {/* dropdown content start*/}
-          <Box w={["270px","270px","350px"]} id={styles.dropdown} >
+          <Box w={["270px", "270px", "350px"]} id={styles.dropdown}>
             <Box align="center">
               <Button className={styles.drop_button} bg="#febd69">
                 Sign in{" "}
