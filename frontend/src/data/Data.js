@@ -23,6 +23,24 @@ export const sliderdata = [
     
 ]
 
+export const sliderdata2 = [
+    {img:"https://m.media-amazon.com/images/I/41WpD4fqT4L._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/41JM3Ra+tiL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/41jna+YGP+L._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/315vs3rLEZL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/41q7YUp4H1L._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/4105IiC5tDL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/41ezRvTwcaL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/51DLLa8HNWL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/51vHAEYKeWL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/41YFUk64EzL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/41BnHjRP0ZS._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/41pQ4gJMwEL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/31OzgzfIAPS._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/41XtHlbmOHL._AC_SY200_.jpg"},
+    {img:"https://m.media-amazon.com/images/I/51beucyTLqL._AC_SY200_.jpg"},
+]
+
 export const carddata1 = [
     {img:"https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/sabikhit/MSO-Tiles/Jan-ART/D68361814_INWLD_JanArt_PC_QuadCard_186X116_1._SY116_CB615734550_.jpg",msg:"Redmi Series: Starting ₹5,999"},
     {img:"https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/sabikhit/MSO-Tiles/Jan-ART/D68361814_INWLD_JanArt_PC_QuadCard_186X116_2._SY116_CB615734550_.jpg",msg:"Samsung M series: Starting ₹8,499"},
