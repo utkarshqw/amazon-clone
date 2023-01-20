@@ -1,3 +1,6 @@
+
+
+
 input[type="radio"]:after {
   width: 15px;
   height: 15px;
@@ -8,7 +11,7 @@ input[type="radio"]:after {
   background-color: white;
   content: "";
   display: inline-block;
-  
+  z-index: 1;
   border: 2px solid white;
 }
 
@@ -16,10 +19,20 @@ input[type="radio"]:checked:after {
   background-color: #ffa500;
 }
 
+.slider_container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0),rgb(234,237,237));
+}
+
 .slider_container > input {
   position: relative;
   left: 50%;
-  top: 220px;
+  top: 200px;
   margin: 5px;
 }
 #first {
@@ -29,6 +42,7 @@ input[type="radio"]:checked:after {
 
 
 #first > img {
+  
   transition: 2s;
 }
 #r2 {
@@ -104,4 +118,7 @@ align-items: center;
 .btn_product > button:nth-child(2){
   border-radius: 5px 0px 0px 5px;
 }
+
+
+
 

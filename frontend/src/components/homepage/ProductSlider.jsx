@@ -1,4 +1,4 @@
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex, Img } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
@@ -6,7 +6,7 @@ import styles from "../../Styles/Slider.module.css";
 import Mycard from "./Mycard";
 import { sliderdata } from "../../data/Data";
 
-const ProductSlider = () => {
+const ProductSlider = ({sliderdata}) => {
   let box = useRef();
 
   const handleprev = () => {
@@ -35,6 +35,8 @@ const ProductSlider = () => {
           ))}
         </Box>
       </Box>
+
+      
     </>
   );
 };
