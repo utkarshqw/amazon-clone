@@ -1,6 +1,6 @@
 import { Box, Button, Divider, Img, Text } from "@chakra-ui/react";
 import {AiOutlineGlobal} from "react-icons/ai"
-import  "../../Styles/Footer.css"
+import styles from   "../../Styles/Footer.module.css"
 
 
 export default function Footer(){
@@ -17,8 +17,8 @@ export default function Footer(){
             <Text fontSize={11} >New Customer? <span style={{color:"skyblue"}}>Start here</span></Text>
             <Divider mt="20px"/>
         </Box>
-        <Box onClick={handlemoveToTop}  className="footer_backtotop" >Back to top</Box>
-        <Box className="footer_seca"  >
+        <Box onClick={handlemoveToTop}  className={styles.footer_backtotop} >Back to top</Box>
+        <Box className={styles.footer_seca}  >
             <Box >
                 <Box>
                     <Text>Get To Know Us</Text>
@@ -58,7 +58,7 @@ export default function Footer(){
             
         </Box>
 
-        <Box className="footer_secb">
+        <Box className={styles.footer_secb}>
             <Box>
                 <Img  src="logo.png"/>
                 <Button leftIcon={<AiOutlineGlobal/>} _hover={{bg:"none"}} variant="outline" borderColor="gray" color={"gray.300"} >English</Button>
@@ -67,7 +67,7 @@ export default function Footer(){
          
         </Box>
 
-        <Box className="footer_sebc">
+        <Box className={styles.footer_sebc}>
                 <Box>India</Box>
                 <Box>Australia</Box>
                 <Box>Canada </Box>
