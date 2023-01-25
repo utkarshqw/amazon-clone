@@ -34,7 +34,9 @@ const Navbar = () => {
             className={styles.nav_input}
             borderRadius="2px"
             bg="white"
+            fontWeight={600}
             placeholder="Serch product..."
+            
           />
           <InputRightElement
             className={styles.nav_right}
