@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .nav_container {
   background-color: #131921;
   color: white;
@@ -62,4 +67,37 @@
 .drop_text > p:hover {
   color: #f3bd69;
   text-decoration: underline;
+}
+
+
+/* Nav links section   */
+
+.navlink_container{
+  height: 40px;
+  background-color: #232f3e;
+  color: white;
+  display: flex;
+  padding: 0px 30px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+.navlink_container > div {
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid #232f3e;
+}
+.navlink_container > div:hover{
+  border: 1px solid white;
+}
+.linkname{
+  border: 1px solid #232f3e ;
+  
+  padding: 5px;
+}
+.linkname:hover{
+
+  border-color: white;
 }

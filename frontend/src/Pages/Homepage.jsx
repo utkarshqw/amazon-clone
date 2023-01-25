@@ -2,6 +2,7 @@ import { Box, Flex } from '@chakra-ui/react'
 import React from 'react'
 import Card_one from '../components/homepage/Card_one'
 import Footer from '../components/homepage/Footer'
+import Navbar from '../components/homepage/Navbar'
 import ProductSlider from '../components/homepage/ProductSlider'
 import Slider from '../components/homepage/Slider'
 import { sliderdata, sliderdata2 } from '../data/Data'
@@ -10,6 +11,7 @@ import {carddata1, carddata2, carddata3, carddata4, carddata5, carddata6, cardda
 const Homepage = () => {
   return (
     <>
+    <Navbar/>
     
     <Slider/>
     <Box  pos={"relative"} zIndex={1} mt="-290px" padding="0px 15px"> 
