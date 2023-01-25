@@ -16,8 +16,13 @@ import { AiFillCaretDown } from "react-icons/ai";
 import React from "react";
 import styles from "../../Styles/Navbar.module.css";
 import CartIcon from "./CartIcon";
+import Navlinks from "./Navlinks";
+import { useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
   return (
     <>
       <Flex
@@ -62,7 +67,7 @@ const Navbar = () => {
           {/* dropdown content start*/}
           <Box w={["270px", "270px", "350px"]} id={styles.dropdown}>
             <Box align="center">
-              <Button className={styles.drop_button} bg="#febd69">
+              <Button onClick={()=>navigate("/Signin")} className={styles.drop_button} bg="#febd69">
                 Sign in{" "}
               </Button>
               <Text fontSize={"120%"} mb="2">
@@ -104,6 +109,8 @@ const Navbar = () => {
         <CartIcon />
       </Flex>
       <Box h={"60px"}></Box>
+
+      <Navlinks/>
     </>
   );
 };
