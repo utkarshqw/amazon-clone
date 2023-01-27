@@ -1,16 +1,14 @@
-// const express = require('express');
+const express = require("express");
+const product = require("./routes/product.router");
+const connectdatabase = require("./config/db");
+require("dotenv").config();
 
-// const app = express()
+const app = express();
+app.use(express.json());
 
-// app.use(express.urlencoded({extended:true}));
-// app.use(express.json());
+app.use("/api/v1/", product);
 
-// app.get('/',(req,res) => res.send('hello'));
-
-// app.listen(8080, ()=>{
-//  console.log('sever started on port 8080');
-// });
-
-
-
-
+connectdatabase();
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on http://localhost:${process.env.PORT}`);
+});
