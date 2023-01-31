@@ -10,8 +10,8 @@ const Card_one = ({text,data,show = false ,bimg=""}) => {
 
       <Box   h="75%" display={"flex"} gap="10px" flexWrap="wrap"   >
         {
-           show && data.map(elem=>(
-                <Box  w="48%">
+           show && data.map((elem, i)=>(
+                <Box  w="48%" key={i}>
                 <Img src={elem.img}  />
                 <Text color={"blackAlpha.700"} fontSize={13}>{elem.msg}</Text>
                 </Box>
