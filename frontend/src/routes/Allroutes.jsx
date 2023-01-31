@@ -1,8 +1,8 @@
 import { Text } from '@chakra-ui/react'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Signin from '../components/Authentican/Signin'
-import Signup from '../components/Authentican/Signup'
+import Signin from '../Pages/Authentican/Signin'
+import Signup from '../Pages/Authentican/Signup'
 import Homepage from '../Pages/Homepage'
 
 const Allroutes = () => {

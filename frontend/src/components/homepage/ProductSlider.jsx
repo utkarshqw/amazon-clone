@@ -31,7 +31,7 @@ const ProductSlider = ({sliderdata}) => {
         </Flex>
         <Box  ref={box} className={styles.productcontainer}>
           {sliderdata.map((el, i) => (
-            <Mycard src={el.img} />
+            <Mycard key={i} src={el.img} />
           ))}
         </Box>
       </Box>

@@ -1,10 +1,33 @@
 import { Box, Button, Divider, Img, Input, Text } from "@chakra-ui/react";
 import { useAnimation } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios"
 
 const Signup = () => {
+  const [registrationdata , setRegistrationdata] = useState({username:"",email:"",password:""}) 
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+  const {name, value} = e.target
+  setRegistrationdata({...registrationdata, 
+  [name]:value 
+  })
+  }
+
+  const handleSubmit = () => {
+     if(!registrationdata.username || !registrationdata.email || !registrationdata.password  ) 
+     {
+      return alert("please fill all the fields")
+     }
+     axios.post(" http://localhost:8080/user/registeruser",registrationdata)
+     .then((res)=> console.log(res))
+     .then((res)=> navigate("/signin"))
+
+ 
+
+
+  }
   return (
     <Box bg="white" align="center">
       <Img src="logo2.png" w="150px" mb="20px" />
@@ -21,13 +44,13 @@ const Signup = () => {
         </Text>
 
         <Text fontWeight={600}>Username </Text>
-        <Input mb="15px" type="text" />
+        <Input mb="15px" type="text" name="username" value={registrationdata.username} onChange={handleChange} />
         <Text fontWeight={600}>Email </Text>
-        <Input mb="15px" type="text" />
+        <Input mb="15px" type="text" name="email" value={registrationdata.email} onChange={handleChange} />
         <Text fontWeight={600}>Password</Text>
-        <Input mb="15px" />
+        <Input mb="15px" name="password" value={registrationdata.password} onChange={handleChange} />
 
-        <Button mb="15px" w="100%" bg="#f4d27f">
+        <Button mb="15px" w="100%" bg="#f4d27f" onClick={handleSubmit}>
           Continue
         </Button>
 
