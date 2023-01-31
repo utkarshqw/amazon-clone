@@ -1,5 +1,6 @@
 const userModel = require("../models/user.model")
 const argon2 = require('argon2');
+const jwt = require("jsonwebtoken")
 
 // register user 
 const registeruser = async (req, res) => {
@@ -27,10 +28,15 @@ const loginuser = async (req, res) => {
     try{
      let {email, password} = req.body
      let user = await  userModel.findOne({email})
+     
      if(user.length == 0) res.send("No such email exists") 
 
-     if (await argon2.verify( user.password, password))  res.status(200).send(true)
-     else res.send("Wrong password")
+     if (await argon2.verify( user.password, password))
+     {
+        const token = jwt.sign({ id:user._id,username:user.username, email:user.email }, process.env.JWT_SECRET )
+        res.send(token)
+     }
+     else res.send(false)
      
     }catch(err){
       console.log(err)
