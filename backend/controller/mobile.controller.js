@@ -13,4 +13,15 @@ const getMobileData = async (req, res) => {
   }
 };
 
+// get sorted data 
+const getsortMobileData = async (req, res) => {
+
+    try{
+        
+
+    }catch(err){
+
+    }
+}
+
 module.exports = { getMobileData };
