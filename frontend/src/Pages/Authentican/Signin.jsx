@@ -3,6 +3,7 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { setCookie } from '../../misc/Allfunctions'
 
 const Signin = () => {
     const [userData, setuserData] = useState({email:"",password:""}) 
@@ -23,7 +24,9 @@ const Signin = () => {
      
      axios.post(" http://localhost:8080/user/login",userData)
      .then((res)=>{
-      if(res.data){
+      if(res.data !== false){
+        setCookie("JWT_TOKEN",res.data)
+        console.log(res.data)
         navigate("/")
       }
       else console.log(res.data)
