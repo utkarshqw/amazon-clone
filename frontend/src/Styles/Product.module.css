@@ -1,0 +1,33 @@
+.productpage_container{
+    display: flex ;
+    padding: 10px;
+    gap: 10px;
+    position: relative;
+}
+.productpage_container > div:nth-child(1) {
+    width: 20%;
+    height: 500px;
+    border: 1px solid blue ;
+    
+    
+}
+.productpage_container > div:nth-child(2){
+    width: 80%;
+    /* border: 1px solid gray; */
+    height: auto;
+    
+}
+
+/* product card component */
+
+.Productcard_container{
+    /* background-color: rgba(128, 128, 128, 0); */
+    display: flex;
+    max-height: 250px;
+    /* padding: 10px; */
+    gap: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   
+}
+
+

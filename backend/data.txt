@@ -1,0 +1,18 @@
+star;price;heading;mainimg
+3;6499;IKALL Z12 4G Smartphone with 4GB RAM, 64 Internal Memory (6.53 Inch HD+ Display) (Jude Green);https://m.media-amazon.com/images/I/71mjJcG-F4L._AC_UY218_.jpg
+4;5989;IKALL K470 6.26" HD+ Display Smartphone (Dual Sim, 4G) (4GB RAM, 13MP Rear Camera) (Dark Blue);https://m.media-amazon.com/images/I/61e6I4jDU2L._AC_UY218_.jpg
+4;6499;Redmi A1 (Light Blue, 2GB RAM, 32GB Storage) | Segment Best AI Dual Cam | 5000mAh Battery | Leather Texture Design | Android 12;https://m.media-amazon.com/images/I/81UT07JsBqL._AC_UY218_.jpg
+4;15490;OPPO A74 5G (Fantastic Purple,6GB RAM,128GB Storage) with No Cost EMI/Additional Exchange Offers;https://m.media-amazon.com/images/I/71geVdy6-OS._AC_UY218_.jpg
+4;6499;Redmi 9A Sport (Coral Green, 2GB RAM, 32GB Storage) | 2GHz Octa-core Helio G25 Processor | 5000 mAh Battery;https://m.media-amazon.com/images/I/810KHyQ4WcL._AC_UY218_.jpg
+3;18000;Samsung Galaxy S22 5G (Phantom Black, 8GB, 128GB Storage) with No Cost EMI/Additional Exchange Offers;https://m.media-amazon.com/images/I/71wGLBDEsvL._AC_UL320_.jpg
+3;61999;Apple iPhone 13 (128GB) - Midnight;https://m.media-amazon.com/images/I/61VuVU94RnL._AC_UL320_.jpg
+5;12199;Redmi 10 Power (Power Black, 8GB RAM, 128GB Storage);https://m.media-amazon.com/images/I/81eM15lVcJL._AC_UL320_.jpg
+2;81999;Apple iPhone 14 256GB (Product) RED;https://m.media-amazon.com/images/I/611mRs-imxL._AC_UL320_.jpg
+5;12199;Xiaomi Redmi 10 Power (Sporty Orange, 8GB RAM, 128GB Storage);https://m.media-amazon.com/images/I/81OZGH4fZiL._AC_UY218_.jpg
+4;8999;Redmi 10A (Slate Grey, 4GB RAM, 64GB Storage) | 2 Ghz Octa Core Helio G25 | 5000 mAh Battery | Finger Print Sensor | Upto 5GB RAM with RAM Booster;https://m.media-amazon.com/images/I/71kVEmAMyEL._AC_UY218_.jpg
+3;11999;Samsung Galaxy M13 (Aqua Green, 4GB, 64GB Storage) | 6000mAh Battery | Upto 8GB RAM with RAM Plus;https://m.media-amazon.com/images/I/81-fFXQdPTL._AC_UY218_.jpg
+3;10499;Redmi 10A Sport (Slate Grey, 6GB RAM, 128GB Storage) | 2 Ghz Octa Cor Helio G25 | 5000 mAh Battery | Finger Print Sensor | Upto 8GB RAM with RAM Booster;https://m.media-amazon.com/images/I/71t7mcs1VoL._AC_UY218_.jpg
+4;6499;Redmi A1 (Light Green, 2GB RAM 32GB ROM) | Segment Best AI Dual Cam | 5000mAh Battery | Leather Texture Design | Android 12;https://m.media-amazon.com/images/I/81UmTnrBDSL._AC_UY218_.jpg
+4;57998;Samsung Galaxy S22 5G (Phantom White, 8GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers;https://m.media-amazon.com/images/I/71HUnJvHsbL._AC_UY218_.jpg
+5;12199;Redmi 10 Power (Power Black, 8GB RAM, 128GB Storage);https://m.media-amazon.com/images/I/81eM15lVcJL._AC_UY218_.jpg
+5;12490;OPPO A31 (Mystery Black, 6GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers;https://m.media-amazon.com/images/I/71KCwNV6MuL._AC_UY218_.jpg

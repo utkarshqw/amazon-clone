@@ -15,14 +15,12 @@ import { BsSearch } from "react-icons/bs";
 import { AiFillCaretDown } from "react-icons/ai";
 import React from "react";
 import styles from "../../Styles/Navbar.module.css";
-import CartIcon from "./CartIcon";
+import CartIcon from "../homepage/CartIcon";
 import Navlinks from "./Navlinks";
 import { useNavigate } from "react-router-dom";
 
-
 const Navbar = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <>
       <Flex
@@ -32,16 +30,16 @@ const Navbar = () => {
         pl={["1px", "10px", "20px"]}
         pr={["1px", "10px", "20px"]}
       >
-        <Img src="logo.png" w="10%" />
+        <Img cursor={"pointer"} src="logo.png" w="10%" onClick={()=> navigate("/")} />
 
         <InputGroup w="45%">
           <Input
             className={styles.nav_input}
             borderRadius="2px"
             bg="white"
+            fontSize={13}
             fontWeight={600}
             placeholder="Serch product..."
-            
           />
           <InputRightElement
             className={styles.nav_right}
@@ -67,7 +65,11 @@ const Navbar = () => {
           {/* dropdown content start*/}
           <Box w={["270px", "270px", "350px"]} id={styles.dropdown}>
             <Box align="center">
-              <Button onClick={()=>navigate("/Signin")} className={styles.drop_button} bg="#febd69">
+              <Button
+                onClick={() => navigate("/Signin")}
+                className={styles.drop_button}
+                bg="#febd69"
+              >
                 Sign in{" "}
               </Button>
               <Text fontSize={"120%"} mb="2">
@@ -110,7 +112,7 @@ const Navbar = () => {
       </Flex>
       <Box h={"60px"}></Box>
 
-      <Navlinks/>
+      <Navlinks />
     </>
   );
 };
