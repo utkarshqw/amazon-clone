@@ -43,4 +43,9 @@ const loginuser = async (req, res) => {
     }
 }
 
-module.exports = {registeruser , loginuser}
+const getuser = async (req, res) => {
+  let data  = await userModel.find({username:"guest"})
+  res.send(data)
+}
+
+module.exports = {registeruser , loginuser, getuser}

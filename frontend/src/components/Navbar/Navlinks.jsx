@@ -11,7 +11,7 @@ const Navlinks = () => {
       <Text>All</Text>
      </Flex>
 
-     <Link className={styles.linkname}>Mobiles</Link>
+     <Link to="/product" className={styles.linkname}>Mobiles</Link>
      <Link className={styles.linkname}>Fashion</Link>
      <Link className={styles.linkname}>Electronics</Link>
      <Link className={styles.linkname}>Appliances</Link>
