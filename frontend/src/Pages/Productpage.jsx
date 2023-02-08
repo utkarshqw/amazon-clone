@@ -6,58 +6,49 @@ import ProductCard from "../components/product/ProductCard";
 import styles from "../Styles/Product.module.css";
 import axios from "axios";
 import Footer from "../components/homepage/Footer";
+import ProductCard2 from "../components/product/ProductCard2";
+import TopBar from "../components/product/TopBar";
+import Pagination from "../components/pagination/Pagination";
 
 const Productpage = () => {
   const [mobiledata, setMobileData] = useState([]);
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(0);
+  const [grid, setGrid] = useState(true);
+
+  var productDataMap = mobiledata?.map((elem, i) => {
+    if (grid) return <ProductCard key={i} {...elem} />;
+    else return <ProductCard2 key={i} {...elem} />;
+  });
+
+  const MOBILEDATA_URL = `http://localhost:8080/product/mobile/?page=${page * 10}&limit=9` 
+
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     axios
-      .get(`http://localhost:8080/product/mobile/?page=${page*10}&limit=9`)
+      .get(MOBILEDATA_URL)
       .then((res) => setMobileData(res.data));
   }, [page]);
 
   const handlePagination = (value) => {
-   setPage(page + value )
-   }
+    setPage(page + value);
+  };
   return (
     <>
       <Navbar />
-      {/* <ProductCard/> */}
       <Box bg="white" className={styles.productpage_container}>
         <Box bg="white"></Box>
         <Box bg="white" p={"10px"}>
-          <Flex
-            gap={5}
-            borderBottom={"1px solid gray"}
-            h="50px"
-            alignItems={"center"}
-          >
-            <Text fontWeight={700}>SortBy</Text>
-            <Text
-              cursor={"pointer"}
-              _hover={{ color: "brown" }}
-              fontWeight={500}
-              fontSize={15}
-            >
-              Price -- Low to High
-            </Text>
-            <Text cursor={"pointer"} _hover={{ color: "brown" }} fontSize={15}>
-              Price -- High to Low
-            </Text>
+          <TopBar setGrid={setGrid} />
+          <Flex gap={"3%"} flexWrap={"wrap"}>
+            {productDataMap}
           </Flex>
-
-          {mobiledata?.map((elem, i) => (
-            <ProductCard key={i} {...elem} />
-          ))}
         </Box>
       </Box>
       <Box bg="white" textAlign={"center"}>
-      <Button bg="#f3bd69"  disabled={page == 0} onClick={()=>handlePagination(-1)} >prev</Button>
-      <Button>{page}</Button>
-      <Button bg="#f3bd69"  disabled={page == 1} onClick={()=>handlePagination(1)} >next</Button>
+        <Pagination page={page} handlePagination={handlePagination} />
       </Box>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -15,7 +15,7 @@ import { BsSearch } from "react-icons/bs";
 import { AiFillCaretDown } from "react-icons/ai";
 import React from "react";
 import styles from "../../Styles/Navbar.module.css";
-import CartIcon from "../homepage/CartIcon";
+import CartIcon from "./CartIcon";
 import Navlinks from "./Navlinks";
 import { useNavigate } from "react-router-dom";
 

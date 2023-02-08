@@ -4,7 +4,7 @@ const router = express.Router()
 
 // get mobile data
 router.route("/mobile").get(getMobileData)
-router.route("/mobile_sort").get()
+router.route("/mobile_sort")
 
 
 module.exports = router

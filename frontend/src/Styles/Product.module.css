@@ -21,12 +21,12 @@
 /* product card component */
 
 .Productcard_container{
-    /* background-color: rgba(128, 128, 128, 0); */
-    display: flex;
-    max-height: 250px;
-    /* padding: 10px; */
+   display: flex;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  flex-direction: column;
+   width: 31%;
     gap: 15px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   
    
 }
 
