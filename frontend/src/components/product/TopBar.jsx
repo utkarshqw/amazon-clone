@@ -27,8 +27,8 @@ const TopBar = ({setGrid}) => {
       Price -- High to Low
     </Text>
 
-    <BsFillGridFill onClick={GridOn} />
-    <MdViewAgenda onClick={GridOff} />
+    <BsFillGridFill style={{cursor:"pointer"}} onClick={GridOn} />
+    <MdViewAgenda style={{cursor:"pointer"}} onClick={GridOff} />
     
   </Flex>
   )

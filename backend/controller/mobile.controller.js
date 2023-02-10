@@ -10,18 +10,23 @@ const getMobileData = async (req, res) => {
     res.send(data);
   } catch (err) {
     console.log(err);
+    res.send(err.message)
   }
 };
 
-// get sorted data 
+// get sorted data
 const getsortMobileData = async (req, res) => {
+  try {
+    let sortby = req.query._sortby;
+    let order = req.query._order;
+    order = order == "asc" ? 1 : -1;
 
-    try{
-        
+    var sorted_Data = await mobileModel.find().sort({ [sortby]: order });
+    res.send(sorted_Data);
+  } catch (err) {
+    console.log(err.message);
+    res.send(err.message);
+  }
+};
 
-    }catch(err){
-
-    }
-}
-
-module.exports = { getMobileData };
+module.exports = { getMobileData, getsortMobileData };

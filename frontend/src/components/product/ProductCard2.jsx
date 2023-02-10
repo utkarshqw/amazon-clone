@@ -1,10 +1,16 @@
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
 import React from "react";
-import ProductStar from "./ProdctStar"
+import ProductStar from "./ProdctStar";
 
-const ProductCard2 = ({mainimg,heading,star, price, base, discount, }) => {
+const ProductCard2 = ({ mainimg, heading, star, price, base=10000, discount=40 }) => {
   return (
-    <Flex maxH={"250px"} w="100%" bg="white" m="10px 0px" boxShadow={"rgba(149, 157, 165, 0.2) 0px 8px 24px"} >
+    <Flex
+      maxH={"250px"}
+      w="100%"
+      bg="white"
+      m="10px 0px"
+      boxShadow={"rgba(149, 157, 165, 0.2) 0px 8px 24px"}
+    >
       <Box
         p="10px"
         maxW="230px"

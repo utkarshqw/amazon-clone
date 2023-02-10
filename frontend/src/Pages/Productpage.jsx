@@ -17,7 +17,7 @@ const Productpage = () => {
 
   var productDataMap = mobiledata?.map((elem, i) => {
     if (grid) return <ProductCard key={i} {...elem} />;
-    else return <ProductCard2 key={i} {...elem} />;
+     return <ProductCard2 key={i} {...elem} />;
   });
 
   const MOBILEDATA_URL = `http://localhost:8080/product/mobile/?page=${page * 10}&limit=9` 

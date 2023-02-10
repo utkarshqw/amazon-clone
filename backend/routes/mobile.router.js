@@ -1,10 +1,11 @@
 const express = require("express") 
-const { getMobileData } = require("../controller/mobile.controller")
+const { getMobileData, getsortMobileData } = require("../controller/mobile.controller")
 const router = express.Router()
 
-// get mobile data
+// get mobile data.
 router.route("/mobile").get(getMobileData)
-router.route("/mobile_sort")
+// get mobile data sorted by price.
+router.route("/mobile_sort").get(getsortMobileData)
 
 
 module.exports = router
