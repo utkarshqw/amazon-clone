@@ -1,37 +1,30 @@
-import { Button, Flex, Text } from '@chakra-ui/react'
-import React from 'react'
-import {BsFillGridFill} from "react-icons/bs"
-import {MdViewAgenda} from "react-icons/md"
+import { Button, Flex, Text, Tooltip } from "@chakra-ui/react";
+import React from "react";
+import { BsFillGridFill } from "react-icons/bs";
+import { MdViewAgenda } from "react-icons/md";
+import {FaSortAmountDownAlt} from "react-icons/fa";
+import {FaSortAmountUp} from "react-icons/fa";
+import {TiArrowUnsorted} from "react-icons/ti";
+import Tool from "./Tool";
 
-const TopBar = ({setGrid}) => {
-    const GridOn = ()=>setGrid(true)
-    const GridOff = ()=>setGrid(false)
+const TopBar = ({ setGrid, setOrder, order, grid }) => {
+
   return (
     <Flex
-            
-    gap={5}
-    borderBottom={"1px solid gray"}
-    h="50px"
-    alignItems={"center"}
-  >
-    <Text fontWeight={700}>SortBy</Text>
-    <Text
-      cursor={"pointer"}
-      _hover={{ color: "brown" }}
-      fontWeight={500}
-      fontSize={15}
+      gap={5}
+      borderBottom={"1px"}
+      borderColor="gray.300"
+      h="50px"
+      alignItems={"center"}
     >
-      Price -- Low to High
-    </Text>
-    <Text cursor={"pointer"} _hover={{ color: "brown" }} fontSize={15}>
-      Price -- High to Low
-    </Text>
+      <Tool state={order} condition={"unSorted"}  label="Unsorted" update="unSorted" setState={setOrder} icon={<TiArrowUnsorted/>} />
+      <Tool state={order} condition={"asc"}  label="Price Low To High" update="asc" setState={setOrder} icon={<FaSortAmountDownAlt/>} />
+      <Tool state={order} condition={"desc"}  label="Price High To Low" update="desc" setState={setOrder} icon={<FaSortAmountUp/>} />
+      <Tool state={grid}  condition={true} label = "Grid view" update={true} setState={setGrid} icon={<BsFillGridFill/>} />
+      <Tool state={grid}  condition={false} label="Column view" update={false} setState={setGrid} icon={<MdViewAgenda/>} />
 
-    <BsFillGridFill style={{cursor:"pointer"}} onClick={GridOn} />
-    <MdViewAgenda style={{cursor:"pointer"}} onClick={GridOff} />
-    
-  </Flex>
-  )
-}
+    </Flex>
+  );
+};
 
-export default TopBar
+export default TopBar;

@@ -19,9 +19,19 @@ const getsortMobileData = async (req, res) => {
   try {
     let sortby = req.query._sortby;
     let order = req.query._order;
-    order = order == "asc" ? 1 : -1;
+    let limit = req.query._limit;
+    let page = req.query._page
+    
+    if(order == "asc") order = 1;
+    else if(order == "desc") order = -1;
+    else
+    {
+      let Data = await mobileModel.find().limit(+limit).skip(page)
+     return  res.send(Data)
+    }
 
-    var sorted_Data = await mobileModel.find().sort({ [sortby]: order });
+
+    var sorted_Data = await mobileModel.find().sort({ [sortby]: order }).limit(+limit).skip(page);
     res.send(sorted_Data);
   } catch (err) {
     console.log(err.message);

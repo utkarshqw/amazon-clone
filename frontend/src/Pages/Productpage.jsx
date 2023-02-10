@@ -13,6 +13,7 @@ import Pagination from "../components/pagination/Pagination";
 const Productpage = () => {
   const [mobiledata, setMobileData] = useState([]);
   const [page, setPage] = useState(0);
+  const [order, setOrder] = useState("unSorted")
   const [grid, setGrid] = useState(true);
 
   var productDataMap = mobiledata?.map((elem, i) => {
@@ -20,16 +21,23 @@ const Productpage = () => {
      return <ProductCard2 key={i} {...elem} />;
   });
 
-  const MOBILEDATA_URL = `http://localhost:8080/product/mobile/?page=${page * 10}&limit=9` 
-
+ 
+  const MOBILEDATA_URL =`http://localhost:8080/product/mobile_sort/?_sortby=price&_order=${order}&_limit=9&_page=${page * 10}`
+  function GetData (URL) {
+    axios
+    .get(URL)
+    .then((res) => setMobileData(res.data));
+  }
+   
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    axios
-      .get(MOBILEDATA_URL)
-      .then((res) => setMobileData(res.data));
-  }, [page]);
+    GetData(MOBILEDATA_URL)
+  }, [page,order]);
+  
 
-  const handlePagination = (value) => {
+ 
+
+ const handlePagination = (value) => {
     setPage(page + value);
   };
   return (
@@ -38,7 +46,8 @@ const Productpage = () => {
       <Box bg="white" className={styles.productpage_container}>
         <Box bg="white"></Box>
         <Box bg="white" p={"10px"}>
-          <TopBar setGrid={setGrid} />
+            {/* Top Bare here */}
+          <TopBar  order={order} grid={grid} setOrder={setOrder} setGrid={setGrid} />
           <Flex gap={"3%"} flexWrap={"wrap"}>
             {productDataMap}
           </Flex>
