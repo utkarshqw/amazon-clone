@@ -5,16 +5,19 @@ import Navbar from "../components/Navbar/Navbar";
 import ProductCard from "../components/product/ProductCard";
 import styles from "../Styles/Product.module.css";
 import axios from "axios";
-import Footer from "../components/homepage/Footer";
 import ProductCard2 from "../components/product/ProductCard2";
 import TopBar from "../components/product/TopBar";
 import Pagination from "../components/pagination/Pagination";
+import Footer from "../components/Footer/Footer";
+
 
 const Productpage = () => {
   const [mobiledata, setMobileData] = useState([]);
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState("unSorted")
   const [grid, setGrid] = useState(true);
+  const [limit , setLimit] = useState(9)
+  let [totalproduct, setTotlaproduct] = useState(0)
 
   var productDataMap = mobiledata?.map((elem, i) => {
     if (grid) return <ProductCard key={i} {...elem} />;
@@ -22,11 +25,14 @@ const Productpage = () => {
   });
 
  
-  const MOBILEDATA_URL =`http://localhost:8080/product/mobile_sort/?_sortby=price&_order=${order}&_limit=9&_page=${page * 10}`
+  const MOBILEDATA_URL =`http://localhost:8080/product/mobile_sort/?_sortby=price&_order=${order}&_limit=${limit}&_page=${page*10}`
   function GetData (URL) {
     axios
     .get(URL)
-    .then((res) => setMobileData(res.data));
+    .then((res) =>{ 
+      setTotlaproduct(res.data.total_product)
+      setMobileData(res.data.Data || res.data.sorted_Data)})
+    
   }
    
   useEffect(() => {
@@ -54,7 +60,7 @@ const Productpage = () => {
         </Box>
       </Box>
       <Box bg="white" textAlign={"center"}>
-        <Pagination page={page} handlePagination={handlePagination} />
+        <Pagination limit={limit} totalproduct={totalproduct} page={page} setPage={setPage} handlePagination={handlePagination} />
       </Box>
 
       <Footer />

@@ -1,7 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 import Card_one from "../components/homepage/Card_one";
-import Footer from "../components/homepage/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import ProductSlider from "../components/homepage/ProductSlider";
 import Slider from "../components/homepage/Slider";
@@ -15,6 +14,7 @@ import {
   carddata6,
   carddata7,
 } from "../data/Data";
+import Footer from "../components/Footer/Footer";
 
 const Homepage = () => {
   return (
