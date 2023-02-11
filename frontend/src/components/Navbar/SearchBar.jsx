@@ -1,5 +1,5 @@
 import { Box, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import { BsSearch } from "react-icons/bs";
 import styles from "../../Styles/Navbar.module.css";
 import axios from "axios"
@@ -12,7 +12,7 @@ const SearchBar = ({searchResult, setSearchResult}) => {
     const SEARCH_URL = `http://localhost:8080/product/accessories_search/?search=`
   const handleChange = (e) => {
    if(e.target.value.length < 2) return  setSearchResult([])
-   axios.get(SEARCH_URL + e.target.value).then((res)=>{console.log(res.data);setSearchResult(res.data)})
+   axios.get(SEARCH_URL + e.target.value).then((res)=>{setSearchResult(res.data)})
   };
 
   return (
@@ -44,7 +44,7 @@ const SearchBar = ({searchResult, setSearchResult}) => {
         maxH="400px"
         overflowY={"scroll"}
         p="15px"
-        display={searchResult.length == 0  && "none"}
+        display={searchResult.length === 0  && "none"}
       >
         {
             searchResult?.map((elem,i)=>(

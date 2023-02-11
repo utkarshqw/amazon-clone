@@ -45,4 +45,15 @@ const searchAccessoriesData = async (req, res) => {
   }
 };
 
-module.exports = { getsortMobileData, searchAccessoriesData };
+// get single product 
+const getSingleAccessoriesData = async (req, res) => {
+  try{
+    const productData = await mobileModel.findOne({_id:req.params.id})
+    res.status(200).send(productData)
+
+  }catch(err){
+    res.status(500).send(err.message)
+  }
+} 
+
+module.exports = { getsortMobileData, searchAccessoriesData, getSingleAccessoriesData };

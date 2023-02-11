@@ -6,8 +6,8 @@
 }
 .productpage_container > div:nth-child(1) {
     width: 20%;
-    height: 500px;
-    border: 1px solid blue ;
+    height: 100vh;
+    border: 1px solid gray ;
     
     
 }

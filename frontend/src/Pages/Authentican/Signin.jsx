@@ -35,7 +35,7 @@ const Signin = () => {
     
   return (
     <Box bg="white" align="center">
-    <Img src="logo2.png" w="150px" mb="20px" />
+    <Img alt="#" src="logo2.png" w="150px" mb="20px" />
 
    
     <Box boxShadow={" rgba(0, 0, 0, 0.16) 0px 1px 4px"} borderRadius="5px" p="25px" w="30%" align="left">

@@ -1,14 +1,13 @@
-import { Box, Img } from '@chakra-ui/react'
-import React from 'react'
-import styles from "../../Styles/Slider.module.css"
+import { Box, Img } from "@chakra-ui/react";
+import React from "react";
+import styles from "../../Styles/Slider.module.css";
 
-
-const Mycard = ({src}) => {
+const Mycard = ({ src }) => {
   return (
-    <Box  className={styles.mycard} align="center" >
-      <Img src={src} mt="20px"/>
+    <Box className={styles.mycard} align="center">
+      <Img alt="myCardimage" src={src} mt="20px" />
     </Box>
-  )
-}
+  );
+};
 
-export default Mycard
+export default Mycard;

@@ -43,9 +43,21 @@ const loginuser = async (req, res) => {
     }
 }
 
+// get userDetails from JWT_TOKEN
+
+const getUserDetailsJwt = (req, res) => {
+  try{
+    const token = req.params.token
+    const decoded = jwt.verify(token,process.env.JWT_SECRET) 
+    res.send(decoded)
+  }catch(err){
+    res.status(500).send(err.message) 
+ }
+  
+}
 const getuser = async (req, res) => {
   let data  = await userModel.find({username:"guest"})
   res.send(data)
 }
 
-module.exports = {registeruser , loginuser, getuser}
+module.exports = {registeruser , loginuser, getuser, getUserDetailsJwt}

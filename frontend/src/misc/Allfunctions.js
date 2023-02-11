@@ -7,7 +7,7 @@ const setCookie = (cookiename, data) => {
  })
 }
 
-const getCookie = (cookiename, data) => {
+const getCookie = (cookiename) => {
     return cookie.get(cookiename)
 }
 

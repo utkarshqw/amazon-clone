@@ -1,8 +1,9 @@
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
 import styles from "../../Styles/Product.module.css";
-import { AiFillStar } from "react-icons/ai";
-import React, { useState } from "react";
+
+import React from "react";
 import ProductStar from "./ProdctStar";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({
   mainimg = "https://m.media-amazon.com/images/I/71mjJcG-F4L._AC_UY218_.jpg",
@@ -11,11 +12,15 @@ const ProductCard = ({
   base = 10000,
   discount = 40,
   star = 4,
+  _id
 }) => {
-  const [grid, setGrid] = useState(true);
+  const navigate = useNavigate()
+ 
+    
+
 
   return (
-    <Flex bg="white" m="10px 0px" className={styles.Productcard_container}>
+    <Flex onClick={()=>navigate(`/details/${_id}`)} cursor="pointer" bg="white" m="10px 0px" className={styles.Productcard_container}>
       <Box
         p="10px"
         align="center"
@@ -24,10 +29,10 @@ const ProductCard = ({
         maxH={"230px"}
       >
         {/* change is made */}
-        <Img borderRadius={"5px"} h={"100%"} src={mainimg} />
+        <Img alt="#" borderRadius={"5px"} h={"100%"} src={mainimg} />
       </Box>
       <Box p="10px">
-        <Text  noOfLines={2} mb="5px" fontSize={17} fontWeight="bold">
+        <Text noOfLines={2} mb="5px" fontSize={17} fontWeight="bold">
           {heading}
         </Text>
 
