@@ -1,8 +1,18 @@
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ProductStar from "./ProdctStar";
 
-const ProductCard2 = ({ mainimg, heading, star, price, base=10000, discount=40 }) => {
+const ProductCard2 = ({
+  mainimg,
+  heading,
+  star,
+  price,
+  base = 10000,
+  discount = 40,
+  _id
+}) => {
+  const navigate = useNavigate()
   return (
     <Flex
       maxH={"250px"}
@@ -10,6 +20,8 @@ const ProductCard2 = ({ mainimg, heading, star, price, base=10000, discount=40 }
       bg="white"
       m="10px 0px"
       boxShadow={"rgba(149, 157, 165, 0.2) 0px 8px 24px"}
+      onClick={()=>navigate(`/details/${_id}`)}
+      cursor="pointer"
     >
       <Box
         p="10px"
@@ -18,7 +30,7 @@ const ProductCard2 = ({ mainimg, heading, star, price, base=10000, discount=40 }
         align="center"
         bg="rgba(128, 128, 128, .15)"
       >
-        <Img src={mainimg} h="100%" />
+        <Img alt="#" src={mainimg} h="100%" />
       </Box>
       <Box p="10px">
         <Text noOfLines={2} mb="5px" fontSize={18}>

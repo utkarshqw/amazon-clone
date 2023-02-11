@@ -9,19 +9,19 @@ const Pagination = ({page,handlePagination, totalproduct, setPage, limit}) => {
     <Button
     bg="#f3bd69"
     
-    display={page == 0 && "none"}
+    display={page === 0 && "none"}
     onClick={() => handlePagination(-1)}
   >
     prev
   </Button>
   {
      new Array(total).fill(0).map((elem,index)=>(
-       <Button key={index} m="0px 5px" disabled={page == index} bg={page==index && "gray"} onClick={()=>setPage(index)}>{index+1}</Button>
+       <Button key={index} m="0px 5px" disabled={page === index} bg={page===index && "gray"} onClick={()=>setPage(index)}>{index+1}</Button>
      ))
   }
   <Button
     bg="#f3bd69"
-    display={page == total-1 && "none"}
+    display={page === total-1 && "none"}
     onClick={() => handlePagination(1)}
   >
     next

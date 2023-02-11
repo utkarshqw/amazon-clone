@@ -1,12 +1,11 @@
-import { Box, Button, Flex, Img } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import React, { useRef } from "react";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
 import styles from "../../Styles/Slider.module.css";
 import Mycard from "./Mycard";
-import { sliderdata } from "../../data/Data";
 
-const ProductSlider = ({sliderdata}) => {
+const ProductSlider = ({ sliderdata }) => {
   let box = useRef();
 
   const handleprev = () => {
@@ -20,7 +19,7 @@ const ProductSlider = ({sliderdata}) => {
   };
   return (
     <>
-      <Box pos="relative" m="10px 0px" >
+      <Box pos="relative" m="10px 0px">
         <Flex className={styles.btn_product}>
           <button onClick={handleprev}>
             <BsChevronLeft size="35px" />
@@ -29,14 +28,12 @@ const ProductSlider = ({sliderdata}) => {
             <BsChevronRight size="35px" />{" "}
           </button>
         </Flex>
-        <Box  ref={box} className={styles.productcontainer}>
+        <Box ref={box} className={styles.productcontainer}>
           {sliderdata.map((el, i) => (
             <Mycard key={i} src={el.img} />
           ))}
         </Box>
       </Box>
-
-      
     </>
   );
 };

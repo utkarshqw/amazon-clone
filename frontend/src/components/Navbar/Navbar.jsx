@@ -7,16 +7,34 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { AiFillCaretDown } from "react-icons/ai";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../Styles/Navbar.module.css";
 import CartIcon from "./CartIcon";
 import Navlinks from "./Navlinks";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import axios from "axios"
+import { getCookie, removeCookie } from "../../misc/Allfunctions";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [searchResult , setSearchResult] = useState([])
+  const [user, setUser] = useState({})
+  useEffect(()=>{
+ var token =  getCookie("JWT_TOKEN")
+ axios.get("http://localhost:8080/user/tokeninfo/"+token)
+ .then((res)=>setUser(res.data)) 
+  },[])
+ 
+  const handleSignin = () => {
+    navigate("/signin")
+  }
+
+  const handleSignout = () => {
+    removeCookie("JWT_TOKEN")
+    setUser({})
+  }
+
   return (
     <>
       <Flex
@@ -28,14 +46,14 @@ const Navbar = () => {
        onClick={()=>setSearchResult([])}
         
       >
-        <Img cursor={"pointer"} src="logo.png" w="10%" onClick={()=> navigate("/")} />
+        <Img cursor={"pointer"} alt="logo" src="/logo.png" w="10%" onClick={()=> navigate("/")} />
 
          <SearchBar searchResult={searchResult} setSearchResult={setSearchResult} />
 
         {/* sign in box */}
-        <Box h="100%" className={styles.hello}>
+        <Box cursor={"pointer"} h="100%" className={styles.hello}>
           <Text mt="10px" fontSize={"140%"}>
-            Hello, sign in
+            Hello, {user.username || "sign in"} 
           </Text>
           <Flex className={styles.signin}>
             <Text fontSize={"150%"} fontWeight={500}>
@@ -51,11 +69,11 @@ const Navbar = () => {
           <Box w={["270px", "270px", "350px"]} id={styles.dropdown}>
             <Box align="center">
               <Button
-                onClick={() => navigate("/Signin")}
+                onClick={user.username ? handleSignout : handleSignin}
                 className={styles.drop_button}
                 bg="#febd69"
               >
-                Sign in{" "}
+               {user.username? "Sign out" : "Sign in" } 
               </Button>
               <Text fontSize={"120%"} mb="2">
                 New customer?{" "}
