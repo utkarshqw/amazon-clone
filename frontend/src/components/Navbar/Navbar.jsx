@@ -4,23 +4,19 @@ import {
   Divider,
   Flex,
   Img,
-  Input,
-  InputGroup,
-  InputRightAddon,
-  InputRightElement,
   Text,
 } from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import { BsSearch } from "react-icons/bs";
 import { AiFillCaretDown } from "react-icons/ai";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../Styles/Navbar.module.css";
 import CartIcon from "./CartIcon";
 import Navlinks from "./Navlinks";
 import { useNavigate } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [searchResult , setSearchResult] = useState([])
   return (
     <>
       <Flex
@@ -29,23 +25,12 @@ const Navbar = () => {
         gap={["4%", "4%", "5%"]}
         pl={["1px", "10px", "20px"]}
         pr={["1px", "10px", "20px"]}
+       onClick={()=>setSearchResult([])}
+        
       >
         <Img cursor={"pointer"} src="logo.png" w="10%" onClick={()=> navigate("/")} />
 
-        <InputGroup w="45%">
-          <Input
-            className={styles.nav_input}
-            borderRadius="2px"
-            bg="white"
-            fontSize={13}
-            fontWeight={600}
-            placeholder="Serch product..."
-          />
-          <InputRightElement
-            className={styles.nav_right}
-            children={<BsSearch size={"1.5em"} color="black" />}
-          />
-        </InputGroup>
+         <SearchBar searchResult={searchResult} setSearchResult={setSearchResult} />
 
         {/* sign in box */}
         <Box h="100%" className={styles.hello}>
