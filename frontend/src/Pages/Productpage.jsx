@@ -72,8 +72,7 @@ const Productpage = () => {
           handlePagination={handlePagination}
         />
       </Box>
-
-      <Footer />
+    <Footer />
     </>
   );
 };
