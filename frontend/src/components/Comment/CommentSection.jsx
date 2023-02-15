@@ -8,15 +8,16 @@ import PostForm from './PostForm'
 const CommentSection = () => {
  const [rootcomment, setRootComment] = useState([])
  
- useEffect(()=>{
-  axios.get("http://localhost:8080/comment/getrootcomment")
+  useEffect(()=>{
+   axios.post("http://localhost:8080/comment/getrootcomment",{id:"null"})
   .then(res=>setRootComment(res.data))
- },[])
+  },[])
 
   return (
     <Box 
     display={"flex"}
     gap="20px"
+    bg="white"
 
     >
          {/* rating bar container */}

@@ -13,14 +13,16 @@ const postComment = async (req, res) => {
 // if parentId of a comment is null then it is a root comment otherwise it is a reply
 
 const getRootComment = async (req, res) => {
-    Id = req.body.id? req.body.id: "null"
+    Id = req.body.id
   try {
     const rootComment = await commentModel
       .find({ parentId: Id })
       .populate("user","-password -email -__v");
     res.status(200).send(rootComment);
   } catch (err) {
+    console.log(err.message)
     res.status(500).send(err.message);
+
   }
 };
 

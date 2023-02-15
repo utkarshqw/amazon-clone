@@ -3,6 +3,6 @@ const { postComment, getRootComment } = require("../controller/comment.controlle
 const router = express.Router()
 
 router.route("/post").post(postComment)
-router.route("/getrootcomment").get(getRootComment) 
+router.route("/getrootcomment").post(getRootComment) 
 
 module.exports = router
