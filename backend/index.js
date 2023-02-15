@@ -4,6 +4,7 @@ const cors = require("cors");
 // const product = require("./routes/product.router");
 const user = require("./routes/user.router");
 const mobile = require("./routes/mobile.router");
+const comment = require("./routes/comment.router")
 
 const connectdatabase = require("./config/db");
 const errorMilddlerware = require("./middleware/error");
@@ -15,10 +16,10 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/user", user);
-// app.use("/api/v1/", product);
 app.use("/product", mobile);
+app.use("/comment",comment)
 
-// app.use(errorMilddlerware);
+
 
 connectdatabase();
 app.listen(process.env.PORT, () => {

@@ -11,6 +11,7 @@ import Pagination from "../components/pagination/Pagination";
 import Footer from "../components/Footer/Footer";
 
 
+
 const Productpage = () => {
   const [mobiledata, setMobileData] = useState([]);
   const [page, setPage] = useState(0);
@@ -72,6 +73,8 @@ const Productpage = () => {
           handlePagination={handlePagination}
         />
       </Box>
+     
+
     <Footer />
     </>
   );
