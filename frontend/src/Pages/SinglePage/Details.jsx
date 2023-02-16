@@ -46,6 +46,33 @@ import Review from "./Review";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+const imagesArray = [
+  {
+    "link": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/0/8/4/-original-imagfhu75eupxyft.jpeg?q=70",
+    "type": "img"
+  },
+  {
+    "link": "https://www.youtube.com/embed/7MAEulKAAUU",
+    "type": "vid"
+  },
+  {
+    "link": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/9/4/o/-original-imagfz7yvktcmbrf.jpeg?q=70",
+    "type": "img"
+  },
+  {
+    "link": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/b/i/g/-original-imagfhu7ygeguz5v.jpeg?q=70",
+    "type": "img"
+  },
+  {
+    "link": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/l/v/w/-original-imagfhu7mtcjpzgn.jpeg?q=70",
+    "type": "img"
+  },
+  {
+    "link": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/p/d/q/-original-imagfhu7wcfmqzu5.jpeg?q=70",
+    "type": "img"
+  }
+]
+
 
 const Details = ({heading, star , price}) => {
   const bank_offers = [
@@ -72,7 +99,34 @@ const Details = ({heading, star , price}) => {
 
   const [data, setData] = useState({});
 
-  const [img, setImg] = useState();
+  const [img, setImg] = useState(
+    [
+      {
+        "link": "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/0/8/4/-original-imagfhu75eupxyft.jpeg?q=70",
+        "type": "img"
+      },
+      {
+        "link": "https://www.youtube.com/embed/7MAEulKAAUU",
+        "type": "vid"
+      },
+      {
+        "link": "https://rukminim1.flixcart.com/image/416/416/kuwzssw0/television/s/b/f/u-series-55-u1s-55uc1a00-oneplus-original-imag7xtn3b2rwfkj.jpeg?q=70",
+        "type": "img"
+      },
+      {
+        "link": "https://rukminim1.flixcart.com/image/416/416/kuwzssw0/television/a/o/h/u-series-55-u1s-55uc1a00-oneplus-original-imag7xtnf4pfb64f.jpeg?q=70",
+        "type": "img"
+      },
+      {
+        "link": "https://rukminim1.flixcart.com/image/416/416/kuwzssw0/television/d/f/q/u-series-55-u1s-55uc1a00-oneplus-original-imag7xtn86zveeb7.jpeg?q=70",
+        "type": "img"
+      },
+      {
+        "link": "https://rukminim1.flixcart.com/image/416/416/kuwzssw0/television/w/b/m/u-series-55-u1s-55uc1a00-oneplus-original-imag7xtnxwt9kuuy.jpeg?q=70",
+        "type": "img"
+      }
+    ]
+  );
   const [vid, setVid] = useState(false);
 
   const [wish, setWish] = useState(false);
@@ -102,22 +156,14 @@ const Details = ({heading, star , price}) => {
     setImg(elem);
   };
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/tv/singlepage?id=${params.id}`)
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-        setImg(res.data.images[0]);
-      });
-  }, [params.id]);
+  
 
   return (
     <>
       <Box bg="white" p={"10px"} h="auto" display={"flex"} position="relative" zIndex={1}>
         <Box
           w={"40%"}
-          h="90vh"
+          h="100vh"
           position={"sticky"}
           top={"10px"}
           display="flex"
@@ -130,7 +176,7 @@ const Details = ({heading, star , price}) => {
             h="100%"
             overflow={"scroll"}
           >
-            {data?.images?.map((elem, i) => (
+            {imagesArray.map((elem, i) => (
               <Box
                 mb={"5px"}
                 _hover={{ border: "2px", borderColor: "#2874f0" }}
@@ -179,13 +225,11 @@ const Details = ({heading, star , price}) => {
               <Box border={"1px solid white"} h={"400px"}>
                 <Image
                   border={"1px"}
-                  borderColor="white"
-                  // pt={"0px"}
-                  // pb="30px"
-                  // mt={"20px"}
+                  borderColor="blue"
+                  
                   m={"auto"}
                   h="85%"
-                  src={img ? img.link : ""}
+                  src={ img.link || "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/0/8/4/-original-imagfhu75eupxyft.jpeg?q=70"}
                 ></Image>
               </Box>
             )}
