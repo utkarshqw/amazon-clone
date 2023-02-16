@@ -98,7 +98,7 @@ const Rating = ({
           <Box h="105px" mt={"60px"} border="1px" borderColor={"white"}>
             <HStack align={"center"}>
               {cr.map((elem, i) => (
-                <VStack spacing={"0px"}>
+                <VStack key={i} spacing={"0px"}>
                   <CircularProgress
                     size={"80px"}
                     thickness="6px"
