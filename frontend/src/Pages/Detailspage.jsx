@@ -4,6 +4,8 @@ import axios from "axios";
 import { Box } from "@chakra-ui/react";
 import Navbar from "../components/Navbar/Navbar";
 import CommentSection from "../components/Comment/CommentSection";
+import Details from "./SinglePage/Details";
+
 
 const Detailspage = () => {
   const [product, setProduct] = useState({});
@@ -15,12 +17,10 @@ const Detailspage = () => {
   }, [params.id]);
   return (
     <>
+       
       <Navbar />
-      <Box >
-        Details page
-        <br />
-        {product.heading}
-      </Box>
+      { product.length !== 0 && <Details {...product} /> }
+    
 
       <CommentSection/>
     </>

@@ -9,7 +9,7 @@ const CommentSection = () => {
  const [rootcomment, setRootComment] = useState([])
  
   useEffect(()=>{
-   axios.post("http://localhost:8080/comment/getrootcomment",{id:"null"})
+   axios.get("http://localhost:8080/comment/rootcomment")
   .then(res=>setRootComment(res.data))
   },[])
 
@@ -29,7 +29,7 @@ const CommentSection = () => {
 
           {
             rootcomment.map((elem,index)=>(
-              <CommentCard key={index} {...elem} />
+              <CommentCard  key={index} {...elem} />
             ))
           }
         

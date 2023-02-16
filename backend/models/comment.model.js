@@ -6,7 +6,7 @@ const commentSchema =  new mongoose.Schema({
    heading:{type:String},
    message:{type:String, required:true},
    stars:{type:Number},
-   parentId:{type: String, default:"null"}
+   parentId:{type: mongoose.Schema.Types.ObjectId, ref:"Comment"}
 
 },{
     timestamps:true,
