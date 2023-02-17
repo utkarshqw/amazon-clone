@@ -24,7 +24,7 @@ const CommentSection = () => {
          <Box h="500px" border="1px solid gray" w="25%"></Box>
 
          {/* comment bar container */}
-         <Box h="auto" border="1px" w="75%">
+         <Box h="auto" border="1px solid white" w="75%">
           <PostForm />
 
           {
