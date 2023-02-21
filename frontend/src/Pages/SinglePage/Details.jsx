@@ -225,7 +225,7 @@ const Details = ({heading, star , price}) => {
               <Box border={"1px solid white"} h={"400px"}>
                 <Image
                   border={"1px"}
-                  borderColor="blue"
+                  borderColor="white"
                   
                   m={"auto"}
                   h="85%"

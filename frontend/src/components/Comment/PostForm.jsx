@@ -35,7 +35,7 @@ const PostForm = ({replytouser}) => {
       .then((res) => setUser(res.data));
   }, []);
   return (
-    <VStack>
+    <VStack border="1px solid gray" borderRadius={"5px"} p="10px" w="60%" m="auto">
       <Input
         onChange={handleChange}
         value={commentData.heading}
@@ -56,7 +56,7 @@ const PostForm = ({replytouser}) => {
         placeholder="stars"
       />
       <Button onClick={addPost} disabled={!cansubmit}>
-        Submit data{" "}
+        Add Review
       </Button>
     </VStack>
   );
